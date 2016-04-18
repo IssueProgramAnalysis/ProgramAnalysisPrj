@@ -1,0 +1,60 @@
+﻿@model ProgramAnalysis.Models.InfoImageMV
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@using (Html.BeginForm("Index", "InfoImage")){
+    @Html.ValidationSummary(true)
+    @Html.LabelFor(m => m.ImagePath)
+    @Html.TextBoxFor(m => m.ImagePath)
+    <input type="submit" value="Get" />
+}
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Kết quả</th>
+                <th>Giới Hạn</th>
+                <th>Thời Gian</th>
+                <th>Lỗi</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.ListItem != null)
+            {
+                foreach (var elm in Model.ListItem)
+                {
+                    <tr>
+                        <td>@elm.IsImgReal</td>
+                        <td>@elm.Rate</td>
+                        <td>@elm.RunningTime</td>
+                        <td>@elm.ErrorDesc</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Info</th>
+                <th>Description</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if(Model.ResultImage != null)
+            {
+                foreach (var elm in Model.ResultImage)
+                {
+                    <tr>
+                        <td>@elm.FieldName</td>
+                        <td>@elm.Description</td>
+                        <td>@elm.Value</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
