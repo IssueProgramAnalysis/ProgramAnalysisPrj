@@ -39,6 +39,15 @@ namespace ProgramAnalysis.Controllers
             item = mark.ItemExistImage(model.ImagePath);
             model.ListItem.Add(item);
             mark.MatlabObj.Quit();
+            //List<ObjParamSP> listParam = new List<ObjParamSP>();
+            //listParam.Add(new ObjParamSP() { Key = "CommandType", Value = results.CommandType });
+            //listParam.Add(new ObjParamSP() { Key = "CommandId", Value = results.CommandId });
+            //listParam.Add(new ObjParamSP() { Key = "CommandAction", Value = results.CommandAction });
+            //listParam.Add(new ObjParamSP() { Key = "ResultData", Value = deserializer.Serialize(results.Data) });
+            //listParam.Add(new ObjParamSP() { Key = "MessStatus", Value = results.Status });
+            //listParam.Add(new ObjParamSP() { Key = "Topic", Value = e.Topic });
+            //listParam.Add(new ObjParamSP() { Key = "CreateTime", Value = DateTime.Now });
+            //var sdsdsd = Utility.Helper.QueryStoredProcedure("LogMessages", listParam);
             return View(model);
         }
 
